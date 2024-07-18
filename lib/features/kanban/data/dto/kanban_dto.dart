@@ -33,7 +33,9 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
   final int page;
+  @JsonKey(name: 'pages_count')
   final int pagesCount;
+  @JsonKey(name: 'rows_count')
   final int rowsCount;
   final List<Row> rows;
 
@@ -52,7 +54,9 @@ class Row {
 
   factory Row.fromJson(Map<String, dynamic> json) => _$RowFromJson(json);
   final String name;
+  @JsonKey(name: 'indicator_to_mo_id')
   final int indicatorToMoId;
+  @JsonKey(name: 'parent_id')
   final int parentId;
   final int order;
 

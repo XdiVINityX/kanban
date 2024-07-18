@@ -7,5 +7,21 @@ class MyKanbanItem extends StatelessWidget {
   final RowEntity rowEntity;
 
   @override
-  Widget build(BuildContext context) => Text(rowEntity.name);
+  Widget build(BuildContext context) => Card(
+      child: ClipPath(
+        clipper: ShapeBorderClipper(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(6),),),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(rowEntity.name),
+              const SizedBox(height: 20,),
+            ],
+          ),
+        ),
+      ),
+  );
 }

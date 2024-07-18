@@ -20,8 +20,8 @@ Map<String, dynamic> _$KanbanDtoToJson(KanbanDto instance) => <String, dynamic>{
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       page: (json['page'] as num).toInt(),
-      pagesCount: (json['pagesCount'] as num).toInt(),
-      rowsCount: (json['rowsCount'] as num).toInt(),
+      pagesCount: (json['pages_count'] as num).toInt(),
+      rowsCount: (json['rows_count'] as num).toInt(),
       rows: (json['rows'] as List<dynamic>)
           .map((e) => Row.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -29,22 +29,22 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'page': instance.page,
-      'pagesCount': instance.pagesCount,
-      'rowsCount': instance.rowsCount,
+      'pages_count': instance.pagesCount,
+      'rows_count': instance.rowsCount,
       'rows': instance.rows,
     };
 
 Row _$RowFromJson(Map<String, dynamic> json) => Row(
       name: json['name'] as String,
-      indicatorToMoId: (json['indicatorToMoId'] as num).toInt(),
-      parentId: (json['parentId'] as num).toInt(),
+      indicatorToMoId: (json['indicator_to_mo_id'] as num).toInt(),
+      parentId: (json['parent_id'] as num).toInt(),
       order: (json['order'] as num).toInt(),
     );
 
 Map<String, dynamic> _$RowToJson(Row instance) => <String, dynamic>{
       'name': instance.name,
-      'indicatorToMoId': instance.indicatorToMoId,
-      'parentId': instance.parentId,
+      'indicator_to_mo_id': instance.indicatorToMoId,
+      'parent_id': instance.parentId,
       'order': instance.order,
     };
 
